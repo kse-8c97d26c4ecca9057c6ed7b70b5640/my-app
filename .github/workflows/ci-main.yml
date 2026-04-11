@@ -59,6 +59,8 @@ jobs:
           image-ref: ghcr.io/${{ github.repository }}:${{ github.sha }}
           format: cyclonedx
           output: sbom.cdx.json
+          scan-type: image
+          scanners: vuln
 
       - name: Upload SBOM to Dependency-Track
         run: |
